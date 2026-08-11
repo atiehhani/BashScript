@@ -1,8 +1,8 @@
 ### this script resolve all url in /etc/nginx/nginx.conf and append it to /etc/hosts IF NOT ALREADY PRESENT
-* this will backup /etc/hosts before make any change and tag its chnage in that file too
-```
+###* this will backup /etc/hosts before make any change and tag its chnage in that file too
+###```
 #!/bin/bash
-set -x
+#set -x
 
 cat /etc/nginx/nginx.conf|grep proxy_pass|grep -v '#'|sed 's/^ *//'|grep -iv header|awk '{print $2}'|grep -i http|sed 's/^ *//'|cut -d'/' -f3 > /tmp/sina.txt
 cat /etc/nginx/nginx.conf|grep -w "server"|grep -v '#'|grep -v '{'|awk '{print $2}'|sed 's/^ *//'|cut -d'/' -f3 >> /tmp/sina.txt
