@@ -10,6 +10,12 @@
 # Notes:
 #   - Lines can be plain URLs or wrapped in [ ] (as in markdown links).
 #   - If the URL has no explicit port, 80 is used for http:// and 443 for https://.
+
+#######به منظور تشخیص url های یک فایل و تشخیص ارتباط با آن url ها ، در ماشین هاب برکت 232.94 یک اسکریپت نوشته شد که خروجی آن به شرح زیر است.بر روی هاب لایو و برکت اجرا شد.
+###/url.sh
+#####•	کلیه خط های حاوی ip+port  و url  و uri و https و http  را خارج می کند و در یک فایل tmp ذخیره می کند
+########•	از فایل tmp لینک های حاوی ip و port را جدا می کند و ارتباط را بررسی می کند
+###•	از فایل tmp لینک های بدون پورت را بر اساس http و https جدا کنه ارتباطشان را بررسی می کند
 #   - Empty lines and lines starting with # are skipped.
 
 set -u
