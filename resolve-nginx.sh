@@ -7,7 +7,7 @@
 cat /etc/nginx/nginx.conf|grep proxy_pass|grep -v '#'|sed 's/^ *//'|grep -iv header|awk '{print $2}'|grep -i http|sed 's/^ *//'|cut -d'/' -f3 > /tmp/sina.txt
 cat /etc/nginx/nginx.conf|grep -w "server"|grep -v '#'|grep -v '{'|awk '{print $2}'|sed 's/^ *//'|cut -d'/' -f3 >> /tmp/sina.txt
 
-INPUT="/tmp/sina.txt"
+INPUT="/tmp/test.txt"
 HOSTS="/etc/hosts"
 FAILED="$HOSTS"
 cp $HOSTS $HOSTS.$(date +%Y%m%d-%H%M%S)
